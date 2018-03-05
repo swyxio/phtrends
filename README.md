@@ -1,4 +1,5 @@
 # phtrends
+
 product hunt trends
 
 Just doing this for fun to see what might come out of it
@@ -27,7 +28,7 @@ headers = {
 rawdata = {}
 # get data from 2014-2017
 for yr in range(2014, 2018):
-    for mth in range(1, 13): 
+    for mth in range(1, 13):
         yrs = str(yr)
         mths = str(mth)
         req = requests.get(base + "posts/all?sort_by=votes_count&order=desc&search[featured_month]=" + mths + "&search[featured_year]=" + yrs, headers=headers)
@@ -64,7 +65,7 @@ import pandas as pd
 df = pd.DataFrame.from_dict(clean).T
 ```
 
-the data munging looks kind of like: 
+the data munging looks kind of like:
 
 ```python
 # def lambfunc(x):
@@ -100,9 +101,9 @@ def commentsfunc(x):
 cdf = df.apply(commentsfunc, axis=1)
 
 ## output
-# df2.to_csv('trends_counts.csv')
-# vdf.to_csv('votes_counts.csv')
-cdf.to_csv('comments_counts.csv')
+# df2.fillna(0).to_csv('trends_counts.csv')
+# vdf.fillna(0).to_csv('votes_counts.csv')
+cdf.fillna(0).to_csv('comments_counts.csv')
 ```
 
 to check trends of top categories
@@ -110,3 +111,9 @@ to check trends of top categories
 ```python
 df2[df2.sum(axis=0).sort_values(ascending=False)[:10].index]
 ```
+
+# Displaying the data - JAVASCRIPT
+
+Things used
+
+* <https://www.papaparse.com/>
