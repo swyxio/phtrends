@@ -1,9 +1,1 @@
-.dropdown {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-.dropdown div span {
-  width: 64px;
-  display: inline-block;
-  height: 10px;
-}
+.dropdown{display:grid;grid-template-columns:repeat(5,1fr)}.dropdown div span{width:64px;display:inline-block;height:10px}
