@@ -8,7 +8,7 @@
   "scripts": {
     "start": "parcel index.html",
     "start:watch": "parcel watch index.html",
-    "build": "parcel build index.html -d docs"
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "downshift": "^1.28.5",
